@@ -1,0 +1,39 @@
+!!!
+%html
+  %head
+    %title MojaStrona
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = stylesheet_link_tag    '//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css', media: 'all'
+    = stylesheet_link_tag    '//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css', media: 'all'
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = javascript_include_tag '//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js'
+    = csrf_meta_tags
+  %body
+    =render 'layouts/admin_nav'
+    .container
+      .col-sm-2
+        %ul.nav.nav-pills.nav-stacked
+          %li
+            = link_to t('admin.menu.dashboard'), admin_path
+          %li
+            = link_to t('admin.menu.categories'), admin_categories_path
+          %li
+            = link_to t('admin.menu.posts'), admin_posts_path
+          %li
+            %a{ :href=>"#" } Pages
+          %li
+            %a{ :href=>"#" } Users
+          %li
+            %a{ :href=>"#" } Tags
+          %li
+            %a{ :href=>"#" } Comments
+      .col-sm-10
+        %ol.breadcrumb
+          %li
+            %a{ :href=>"#" } Home
+          %li
+            %a{ :href=>"#" } Categories
+          %li.active
+            %a{ :href=>"#" } Posts
+      = yield
+    = render 'layouts/noty'

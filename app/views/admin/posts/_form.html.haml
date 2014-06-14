@@ -1,0 +1,9 @@
+= simple_form_for @post, :url => url, :html=> {:class => 'form-horizontal'} do |f|
+  .form-group
+    =f.label :title, :class => "col-sm-2 control-label"
+    .col-sm-7
+      = f.input_field :title, :label => false, :class => "form-control"
+      .form-group
+        %br
+        .col-sm-offset-0.col-sm-10   
+          = f.button :submit, :class => "btn btn-success"

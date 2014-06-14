@@ -1,0 +1,265 @@
+!!!
+%html{xmlns: "http://www.w3.org/1999/xhtml"}
+  %head
+    %meta{content: "text/html; charset=utf-8", "http-equiv" => "content-type"}/
+    %title Home Page
+    %meta{content: "", name: "keywords"}/
+    %meta{content: "", name: "description"}/
+    %link{href: "styles.css", media: "screen", rel: "stylesheet", type: "text/css"}/
+    / Begin JavaScript
+    = stylesheet_link_tag    '//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css', media: 'all'
+    = javascript_include_tag '//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js'
+    = stylesheet_link_tag    '//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css', media: 'all'
+    = csrf_meta_tags
+    / Initialize each slider on the page. Each slider must have a unique id
+    :javascript
+      $().ready(function() {
+             $('#coda-slider-2').codaSlider({
+                 autoSlide: true,
+                 autoSlideInterval: 6000,
+                 autoSlideStopWhenClicked: true 
+               
+             });
+         });
+    / End JavaScript
+    / Pirobox setup and styles
+    %script{src: "lib/pirobox.js", type: "text/javascript"}
+    :javascript
+      $(document).ready(function() {
+        $().piroBox({
+            my_speed: 400, //animation speed
+            bg_alpha: 0.1, //background opacity
+            slideShow : false, // true == slideshow on, false == slideshow off
+            slideSpeed : 4, //slideshow duration in seconds(3 to 6 Recommended)
+            close_all : '.piro_close,.piro_overlay'// add class .piro_overlay(with comma)if you want overlay click close piroBox
+      
+        });
+      });
+    %link{href: "images/style.css", rel: "stylesheet", type: "text/css"}/
+    / Pirobox setup and styles end
+  %body
+    =render 'layouts/home_nav'
+    #top_header
+      #logo
+        %p
+          %a{href: "#"} MyDesign
+        %small.small_logo
+          %a{href: "#"} small slogan goes here
+      #link_bar
+        %ul
+          %li
+            %a{href: "#"}
+              %img{alt: "", src: "images/link1.png", title: "img"}/
+          %li
+            %a{href: "#"}
+              %img{alt: "", src: "images/link2.png", title: "img"}/
+          %li
+            %a{href: "#"}
+              %img{alt: "", src: "images/link3.png", title: "img"}/
+          %li
+            %a{href: "#"}
+              %img{alt: "", src: "images/link4.png", title: "img"}/
+          %li
+            %a{href: "#"}
+              %img{alt: "", src: "images/link5.png", title: "img"}/
+      #header_border_top
+    #menu_bg
+    #preview_bg
+      #preview_block
+        .coda-slider-wrapper
+          #coda-slider-2.coda-slider.preload
+            .panel
+              .panel-wrapper
+                .p_center
+                  .p_con_left
+                    %p.green Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nisl erat, sodales quis ultricies vitae, condimentum et sem.
+                    %br/
+                    %p.normal Mauris sit amet augue dolor, ac suscipit nunc. Vestibulum est diam, consequat et tempus ac, consectetur vestibulum nulla. Nam commodo varius tempor. Etiam nec massa purus. Maecenas ullamcorper, nisl gravida suscipit eleifend, odio nisl scelerisque velit, viverra tincidunt dolor libero ac nisl. Mauris dapibus nunc at enim
+                    .read_more
+                      %a{href: "#"} Read more
+                  .p_con_right
+                    %a.pirobox_header{href: "images/metamorph_cloudyday.jpg", title: "Metamorph_CloudyDay"}
+                      %img{alt: "", src: "pic/pic-01.jpg", title: "pic-01"}/
+            .panel
+              .panel-wrapper
+                .p_con_left
+                  %p.green Maecenas ullamcorper, nisl gravida suscipit eleifend, odio nisl scelerisque velit, viverra tincidunt dolor libero ac nisl.
+                  %br/
+                  %p.normal Mauris sit amet augue dolor, ac suscipit nunc. Vestibulum est diam, consequat et tempus ac, consectetur vestibulum nulla. Nam commodo varius tempor. Etiam nec massa purus. Maecenas ullamcorper, nisl gravida suscipit eleifend, odio nisl scelerisque velit, viverra tincidunt dolor libero ac nisl. Mauris dapibus nunc at enim
+                  .read_more
+                    %a{href: "#"} Read more
+                .p_con_right
+                  %a.pirobox_header{href: "images/metamorph_landscape.jpg"}
+                    %img{alt: "", src: "pic/pic-05.jpg", title: "pic-01"}/
+            .panel
+              .panel-wrapper
+                .p_con_left
+                  %p.green Donec vitae eros consequat nisi sollicitudin fermentum sed vel ante. Duis ultrices tortor sit amet felis iaculis ac viverra elit imperdiet.
+                  %br/
+                  %p.normal Proin malesuada elit ac erat aliquet in pellentesque dolor tincidunt. Maecenas lectus quam, viverra ac sollicitudin et, venenatis et enim. Aliquam mauris velit, dictum at vestibulum vel, cursus in diam. Proin mattis felis sit amet quam facilisis interdum.
+                  .read_more
+                    %a{href: "#"} Read more
+                .p_con_right
+                  %a.pirobox_header{href: "images/metamorph_simpleblue.jpg"}
+                    %img{alt: "", src: "pic/pic-08.jpg", title: "pic-01"}/
+            .panel
+              .panel-wrapper
+                .p_con_left
+                  %p.green Nulla sit amet felis quam. Donec vitae eros consequat nisi sollicitudin fermentum sed vel ante.
+                  %br/
+                  %p.normal Duis ultrices tortor sit amet felis iaculis ac viverra elit imperdiet. Phasellus rhoncus bibendum risus, ut bibendum ligula lobortis sit amet. Donec tincidunt dictum volutpat. Ut suscipit pellentesque iaculis. Fusce purus enim, sollicitudin vitae vehicula tincidunt, luctus id nisl. Curabitur leo metus, hendrerit et fermentum aliquet, tempus sed enim. Sed euismod aliquet nunc, eu porta metus vehicula vel.
+                  .read_more
+                    %a{href: "#"} Read more
+                .p_con_right
+                  %a.pirobox_header{href: "images/metamorph_redtight.jpg"}
+                    %img{alt: "", src: "pic/pic-12.jpg", title: "pic-01"}/
+      / .coda-slider
+    #header_bottom
+      %p Phasellus tortor metus, ullamcorper a tincidunt quis, fermentum id turpis. Pellentesque commodo, mauris quis sodales faucibus, dui lorem tincidunt purus, non egestas nibh nisi et leo. Donec feugiat tempus nibh vitae aliquam. Curabitur egestas tincidunt lorem eget faucibus.
+    .header_bor_bot
+      .start_now
+        %a{href: "#"} start now!
+    #content
+      .column_box
+        .col1
+          .index_title
+            %img{alt: "", src: "images/title1.png", style: "padding-left: 10px; padding-top: 3px; float: left;", title: ""}/
+            %h2 Our ClientsTestimonials
+          .col_bg_top
+          .col_bg
+            .col_grad_bot
+              .col_grad_top
+                .pad
+                  .num 1
+                  %a{href: "#"} Nam non sem magna. Nam nec orci
+                  %br/
+                  %p Nam non sem magna. Nam nec orci vel erat sollicitudin lacinia vitae eget ipsum.
+                  %a{href: "#"} John Doe
+                  %br/
+                  %a{href: "#"} http://www.somewebsite.com
+                  %br/
+                  .col_hr_line
+                  .num 2
+                  %a{href: "#"} Sollicitudin lacinia vitae eget ipsums
+                  %br/
+                  %p Quisque semper purus ac purus adipiscing sed iaculis turpis venenatis.
+                  %a{href: "#"} John Doe
+                  %br/
+                  %a{href: "#"} http://www.somewebsite.com
+                  %br/
+          .col_bg_bot
+        .col2
+          .index_title
+            %img{alt: "", src: "images/title2.png", style: "padding-left: 10px; padding-top: 1px; float: left;", title: ""}/
+            %h2 Time is Money
+          .col_bg_top
+          .col_bg
+            .col_grad_bot
+              .col_grad_top
+                .pad
+                  %a{href: "#"} Why to choose Us?
+                  %br/
+                  %p Vivamus dui magna, sodales eu porta tristique eget ligula. Quisque semper purus ac purus adipiscing sed iaculis turpis venenatis.
+                  %ul.ul_top
+                    %li
+                      %a{href: "#"} Vivamus dui magna, sodales eu porta
+                    %li
+                      %a{href: "#"} Quisque semper purus ac purus
+                    %li
+                      %a{href: "#"} Curabitur gravida eros sit amet sem
+                  %p Curabitur gravida eros sit amet sem euismod dignissim.
+                  .read_more
+                    %a{href: "#"} Read more
+          .col_bg_bot
+        .col3
+          .index_title
+            %img{alt: "", src: "images/title3.png", style: "padding-left: 10px; padding-top: 3px; float: left;", title: ""}/
+            %h2 Our Upcoming Events
+          .col_bg_top
+          .col_bg
+            .col_grad_bot
+              .col_grad_top
+                .pad{style: "padding-bottom: 3px;"}
+                  %a{href: "#"} 19 - 09 - 2011
+                  %br/
+                  %p Quisque semper purus ac purus adipiscing sed iaculis turpis venenatis. Curabitur gravida
+                  %div{style: "text-align: right"}
+                    %a{href: "#"} read more...
+                  %a{href: "#"} 19 - 09 - 2011
+                  %br/
+                  %p Quisque semper purus ac purus adipiscing sed iaculis turpis venenatis. Curabitur gravida
+                  %div{style: "text-align: right"}
+                    %a{href: "#"} read more...
+                  %a{href: "#"} 19 - 09 - 2011
+                  %br/
+                  %p Quisque semper purus ac purus
+                  %div{style: "text-align: right"}
+                    %a{href: "#"} read more...
+          .col_bg_bot
+      .con_white_hr
+      .column_box
+        .col1
+          %h2 Get Free Quote
+          #log
+            %form#form1{action: "#", method: "post"}
+              %fieldset
+                %label{for: "text1"} Name: (Required)
+                %br/
+                %input#text1{alt: "", name: "text1", type: "text", value: ""}/
+                %br/
+                %label{for: "text2"} Email Address: (Required)
+                %br/
+                %input#text2{alt: "", name: "text2", type: "text", value: ""}/
+                %br/
+                %label{for: "text2"} Message: (Required)
+                %br/
+                %textarea#text_mess{cols: "0", name: "text_mess", rows: "0"}
+                %br/
+                %input#login-submit{type: "submit", value: "Send"}/
+        .col2
+          %h2 Our Contact Info
+          %p.bg_black Vivamus dui magna, sodales eu porta tristique eget ligula. Quisque semper purus ac purus adipiscing sed iaculis turpis venenatis. Curabitur gravida eros sit amet sem euismod dignissim.
+          %h2 Our Partner's Links
+          %ul.ul_bot
+            %li
+              %a{href: "#"} Free Website Templates
+            %li
+              %a{href: "#"} Free Flash Templates
+            %li
+              %a{href: "#"} Easy Flash Templates
+            %li
+              %a{href: "#"} Top Hosting Providers
+            %li
+              %a{href: "#"} Free Fonts
+            %li
+              %a{href: "#"} Free Icons
+            %li
+              %a{href: "#"} Free Photoshop Brushes
+            %li
+              %a{href: "#"} RSS Subscribe
+        .col3
+          %h2 Recent Projects
+          %a.pirobox_footer{href: "images/metamorph_lighting.jpg"}
+            %img.img_bor{alt: "", src: "pic/pic-02.jpg", title: "pic-01"}/
+          %a.pirobox_footer{href: "images/metamorph_ball.jpg"}
+            %img.img_bor{alt: "", src: "pic/pic-03.jpg", title: "pic-01"}/
+      .con_white_hr
+    #footer
+      %p
+        Copyright  2011.
+        %a{href: "#"} Privacy Policy
+        |
+        %a{href: "#"} Terms of Use
+        |
+        %a{href: "http://validator.w3.org/check/referer", title: "This page validates as XHTML 1.0 Transitional"}
+          %abbr{title: "eXtensible HyperText Markup Language"} XHTML
+        |
+        %a{href: "http://jigsaw.w3.org/css-validator/check/referer", title: "This page validates as CSS"}
+          %abbr{title: "Cascading Style Sheets"} CSS
+      / Please DO NOT remove the following notice
+      %p
+        Design by
+        / Do not Remove
+        %a{href: "http://www.metamorphozis.com/", title: "Flash Templates"} Flash Templates
+        / End of notice
+      / end of copyright notice

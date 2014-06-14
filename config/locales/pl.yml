@@ -1,0 +1,12 @@
+pl:
+  buttons:
+    save: "Zapisz"
+  admin:
+    menu:
+      dashboard: "Panel"
+      posts: "Nowości"
+      categories: "Karegorie"
+    posts:
+      all: "Lista postów"
+      new: "Dodaj post"
+      edit: "Edytuj post"

@@ -1,0 +1,7 @@
+%h1= t('admin.posts.all')
+
+= link_to t('admin.posts.new'), new_admin_post_path
+%br
+%ul
+  - @posts.each do |post|
+    %li= link_to post.title, admin_post_path(post)
