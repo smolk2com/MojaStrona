@@ -1,0 +1,6 @@
+-if notice.present?
+  :javascript
+     noty({text: '#{notice}', layout: 'bottomLeft', type: 'success'});
+-if alert.present?
+  :javascript
+    noty({text: '#{alert}', layout: 'bottomLeft', type: 'error'});
