@@ -1,21 +1,21 @@
 -if @post.errors.present?
   :javascript
     noty({text: '#{@post.errors.full_messages.join(', ')}', layout: 'bottomLeft', type: 'error' });
-= simple_form_for @post, :url => url, :html=> {:class => 'form-horizontal'} do |f|
+= simple_form_for [:admin, @post], :html=> {:class => 'form-horizontal'} do |f|
   .form-group
     =f.label :title, :class => "col-sm-2 control-label"
     .col-sm-7
       = f.input_field :title, :label => false, :class => "form-control"
       %br
-    .form-group
-      =f.label :category, :class => "col-sm-2 control-label"
-      .col-sm-7
-        = f.association :category, :label => false, :input_html => {:class => "form-control s2"}
-    .form-group
-      =f.label :body, :class => "col-sm-2 control-label"
-      .col-sm-7
-        = f.input_field :body, :label => false, :class => "form-control wysihtml5"
-        .form-group
-          %br
-          .col-sm-offset-0.col-sm-10   
-            = f.button :submit, :class => "btn btn-success"
+  .form-group
+    =f.label :category, :class => "col-sm-2 control-label"
+    .col-sm-7
+      = f.association :category, :label => false, :input_html => {:class => "form-control s2"}
+  .form-group
+    =f.label :body, :class => "col-sm-2 control-label"
+    .col-sm-7
+      = f.input_field :body, :label => false, :class => "form-control wysihtml5"
+  .form-group
+    %br
+    .col-sm-offset-0.col-sm-10   
+      = f.button :submit, :class => "btn btn-success"

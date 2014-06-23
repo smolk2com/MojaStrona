@@ -13,6 +13,7 @@ pl:
     categories:
       index: "Lista kategorii"
       new: "Nowa Kategoria"
+      edit: "Edytuj Kategorie"
   activerecord:
     attributes:
       post:

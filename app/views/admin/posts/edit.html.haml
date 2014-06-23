@@ -1,6 +1,6 @@
 - content_for :breadcrumb do
   %li
-    = link_to t('admin.posts.index'), admin_posts_path
+    = link_to t('admin.posts.edit'), admin_posts_path
   %li.activ= @post.title
   
-= render 'form', :url => admin_post_path(@post)
+= render 'form'

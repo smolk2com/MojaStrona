@@ -1,1 +1,6 @@
-= render 'admin/posts/form', :url => admin_posts_path(@post)
+- content_for :breadcrumb do
+  %li
+    = link_to t('admin.posts.all'), admin_posts_path
+  %li.activ= t('admin.posts.new')
+
+= render 'form'

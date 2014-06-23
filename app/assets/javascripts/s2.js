@@ -1,1 +1,1 @@
-$(document).ready(function() { $(".s2"),select2(); });
+$(document).ready(function() { $(".s2").select2(); });

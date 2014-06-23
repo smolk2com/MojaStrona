@@ -10,7 +10,7 @@ class Admin::CategoriesController < AdminController
     end
   end
   def show
-    #geting dada from get_post
+    #geting dada from get_category
     respond_to do |format|
       format.html
       format.json { render json: @category }
@@ -36,7 +36,7 @@ class Admin::CategoriesController < AdminController
   def update
     respond_to do |format|
       if @category.update(category_params)
-        format.html { redirect_to admin_category_path(@category), notice: "Category updated" }
+        format.html { redirect_to edit_admin_category_path(@category), notice: "Category updated" }
       else
         format.html { render action: 'edit', alert: "Error while editing" }
       end
@@ -45,7 +45,7 @@ class Admin::CategoriesController < AdminController
   def destroy
     @category.destroy
     respond_to do |format|
-      format.html { redirect_to admin_categories_path, notice: "#{Category.name} deleted"   }
+      format.html { redirect_to admin_categories_path, notice: "#{@category.name} deleted"   }
     end
   end  
 

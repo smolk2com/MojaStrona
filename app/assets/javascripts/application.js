@@ -13,10 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require noty-config
-//= require select2
-//= require s2
 //= require dataTables/jquery.dataTables
 //= require dataTables/jquery.dataTables.bootstrap3
 //= require bootstrap-wysihtml5
 //= require bootstrap-wysihtml5/locales
 //= require dt.js
+//= require select2
+//= require s2

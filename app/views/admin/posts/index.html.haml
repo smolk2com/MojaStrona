@@ -19,5 +19,6 @@
         %td
           = post.category.name if post.category.present?
         %td
-          = link_to raw('<i class="fa fa-trash-o"></i>'), admin_post_path(post), :method => :delete, data: { confirm: 'Are you sure?' }
+          = link_to raw('<i class="fa fa-trash-o"></i>'), admin_post_path(post), :method => :delete, data: { confirm: "Are you sure?" }
           = link_to raw('<i class="fa fa-pencil-square-o"></i>'), edit_admin_post_path(post)
+
