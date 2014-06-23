@@ -45,7 +45,7 @@ class Admin::PostsController < AdminController
   def destroy
     @post.destroy
     respond_to do |format|
-      format.html { redirect_to admin_posts_path, notice: "#{Post.title} deleted"   }
+      format.html { redirect_to admin_posts_path, notice: "#{@post.title} deleted"   }
     end
   end  
 
@@ -54,6 +54,6 @@ protected
     @post = Post.find(params[:id])
   end
   def post_params
-    params.require(:post).permit(:title, :body)
+    params.require(:post).permit(:title, :body, :category_id)
   end
 end

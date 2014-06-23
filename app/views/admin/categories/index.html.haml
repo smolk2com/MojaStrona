@@ -1,0 +1,8 @@
+- content_for :breadcrumb do
+  %li.activ= t('admin.categories.index')
+
+= link_to 'Add categoty', new_admin_category_path
+
+%ul
+  - @categories.each do |c|
+    %li= c.name

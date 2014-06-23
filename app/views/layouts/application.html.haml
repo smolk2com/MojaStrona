@@ -7,8 +7,9 @@
     %meta{content: "", name: "description"}/
     %link{href: "styles.css", media: "screen", rel: "stylesheet", type: "text/css"}/
     / Begin JavaScript
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = stylesheet_link_tag    '//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css', media: 'all'
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', media: 'all'
     = javascript_include_tag '//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js'
     = stylesheet_link_tag    '//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css', media: 'all'
     = csrf_meta_tags

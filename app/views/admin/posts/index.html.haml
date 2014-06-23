@@ -1,7 +1,23 @@
 %h1= t('admin.posts.all')
 
-= link_to t('admin.posts.new'), new_admin_post_path
+= link_to t('admin.posts.new'), new_admin_post_path, :class => "btn btn-success"
 %br
-  %ul
-  - @posts.each do |post|
-    %li= link_to post.title, admin_post_path(post)
+
+%table.datatable
+  %thead
+    %tr
+      %th
+        Name
+      %th
+        Category
+      %th
+  %tbody  
+    - @posts.each do |post|
+      %tr
+        %td
+          = link_to post.title, admin_post_path(post)
+        %td
+          = post.category.name if post.category.present?
+        %td
+          = link_to raw('<i class="fa fa-trash-o"></i>'), admin_post_path(post), :method => :delete, data: { confirm: 'Are you sure?' }
+          = link_to raw('<i class="fa fa-pencil-square-o"></i>'), edit_admin_post_path(post)

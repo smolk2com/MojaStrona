@@ -29,12 +29,16 @@ group :development do
   gem "binding_of_caller"
   gem 'rspec-rails', '~> 3.0.0'
   gem 'pry'
-  gem 'simple_form'
 end
 
 
-gem 'haml-rails'
+gem "haml-rails"
 gem 'noty-rails'
+gem 'simple_form'
+gem "select2-rails"
+gem 'jquery-datatables-rails', git: 'git://github.com/rweng/jquery-datatables-rails.git'
+gem 'bootstrap-wysihtml5-rails', :git => 'git://github.com/Nerian/bootstrap-wysihtml5-rails.git'
+  
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

@@ -5,8 +5,21 @@ pl:
     menu:
       dashboard: "Panel"
       posts: "Nowości"
-      categories: "Karegorie"
+      categories: "Kategorie"
     posts:
       all: "Lista postów"
       new: "Dodaj post"
       edit: "Edytuj post"
+    categories:
+      index: "Lista kategorii"
+      new: "Nowa Kategoria"
+  activerecord:
+    attributes:
+      post:
+        title: "Tytuł"
+    errors:
+      models:
+        post:
+          attributes:
+            title:
+              too_short: " musi posiadać min 3 znaki."

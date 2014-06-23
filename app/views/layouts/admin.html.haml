@@ -4,8 +4,10 @@
     %title MojaStrona
     = stylesheet_link_tag    '//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css', media: 'all'
     = stylesheet_link_tag    '//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css', media: 'all'
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application', media: 'all'
     = javascript_include_tag '//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js', media: 'all'
+    %meta{content: "width=device-width, initial-scale=1", name: "viewport"}/
     = csrf_meta_tags
   %body
     =render 'layouts/admin_nav'
@@ -29,10 +31,7 @@
       .col-sm-10
         %ol.breadcrumb
           %li
-            %a{ :href=>"#" } Home
-          %li
-            %a{ :href=>"#" } Categories
-          %li.active
-            %a{ :href=>"#" } Posts
+            %a{ :href=> admin_path } Home
+          =yield :breadcrumb
       = yield
     = render 'layouts/noty'
